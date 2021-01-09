@@ -13,7 +13,6 @@ rental['Start_Date'] = rental['Start Time'].dt.date
 # Size includes NaN values
 # count does not include NaN values
 # choose appropriately
-py.sign_in(username='VijeeGuna', api_key='phJU9PB8c41agc5Xoxsm')
 rental_count = rental.groupby(["Start_Date", "Passholder_Type"]).size().reset_index(name ="Total_Count")
 trace1 = go.Scatter(
     x = rental_count.query('Passholder_Type == "Flex Pass"').Start_Date,
